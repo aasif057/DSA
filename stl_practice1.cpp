@@ -2,6 +2,7 @@
 using namespace std;
 
 int main(){
+    //Vectors  
     //vector<int> v = {1,2,3,4,5};
     // for(auto it:v){
     //     cout << it;
@@ -17,6 +18,7 @@ int main(){
     //     cout << *it;
     //     cout << endl;
     // }
+  // stack
     /*stack<int> st;
     st.push(1);
     st.push(2);
@@ -25,6 +27,9 @@ int main(){
       cout << st.top() << endl;
       st.pop();
     } */
+
+    //queue
+  /*
     queue<int> q1;
     q1.push(1);
     q1.push(2);
@@ -38,6 +43,16 @@ int main(){
       cout << "Front: " << q1.front() << endl;
       cout << "Back: " << q1.back() << endl;
       q1.pop();
-  }  
+  }
+  */
+  //priority_queue
+  /*
+  priority_queue<int> pq;
+  pq.push(5);
+  pq.push(8);
+  pq.push(2);
+  cout << pq.top() << endl;
+  */
+  
   return 1;
 }
