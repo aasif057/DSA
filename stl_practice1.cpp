@@ -53,6 +53,21 @@ int main(){
   pq.push(2);
   cout << pq.top() << endl;
   */
-  
+
+  int n;
+  cout << "Enter a number: ";
+  cin >> n;
+  vector<int> v;
+  while(n>=1){
+    v.push_back(n%10);
+    n/=10;
+  }
+  int x=0;
+  int size = v.size()-1;
+  for(auto it:v){
+    x+=it*pow(10,size);
+    size--;
+  }
+  cout << "Reversed Number is: " << x << endl;
   return 1;
 }
