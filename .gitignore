@@ -5,3 +5,4 @@ a.out
 *.docs
 *.xlsx
 .vscode
+*.txt
