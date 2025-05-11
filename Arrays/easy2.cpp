@@ -21,8 +21,8 @@ int main(){
     }
     cout << max << endl;
     cout << min << endl;
-    int second_min = 9999;
-    int second_max = -9999;
+    int second_min = max;
+    int second_max = min;
     for(int i=0;i<n;i++){
         if(arr[i]<max && arr[i]> second_max){
             second_max = arr[i];
@@ -31,15 +31,16 @@ int main(){
             second_min=arr[i];
         }
     }
+    
     cout << "Second Largest Number: ";
-    if(max!=second_max){
+    if(second_max!=max){
         cout << second_max;
     }
     else
         cout << "-1";
     cout << endl;
     cout << "Second Smallest Number: ";
-    if(min!=second_min){
+    if(second_min!=min){
         cout << second_min;
     }
     else
