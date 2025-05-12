@@ -17,7 +17,7 @@ void lr_k_brute(int arr[], int n, int k){
     }
 }
 void lr_k_optimal(int arr[], int n, int k){
-    reverse(arr, arr+k);
+    k=k%n;
     reverse(arr+k, arr+n);
     reverse(arr,arr+n);
 }
