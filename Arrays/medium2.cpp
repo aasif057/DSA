@@ -1,20 +1,29 @@
 // 2 sum problem variant 2, return the indexes of both the elements
 #include<bits/stdc++.h>
 using namespace std;
+struct Result{
+    int value1;
+    int value2;
+};
 
-bool brute_force(int arr[], int n, int k){  
+Result brute_force(int arr[], int n, int k){ 
+    Result r;
+    r.value1=-1;
+    r.value2= -1;
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
             if(i==j)
                 continue;
             else{
                 if(arr[i]+arr[j]==k){
-                    return true;    
+                    r.value1=i;
+                    r.value2=j;
+                    return r;
                 }
             }
         }
     }
-    return false;
+    return r;
 }
 
 
@@ -27,6 +36,6 @@ int main(){
     }
     int k;
     cin >> k;
-    bool result = brute_force(arr,n,k);
-    cout << result;
+    Result r = brute_force(arr,n,k);
+    cout << '[' <<r.value1 << ",  " << r.value2 << ']' << endl; 
 }
