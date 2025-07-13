@@ -7,7 +7,7 @@ void brute(int arr[], int n){
 }
 
 void better(int arr[], int n){
-    int a,b,c=0;
+    int a=0,b=0,c=0;
     for(int i = 0; i < n; i++) {
         if(arr[i]==0)
             a++;
@@ -16,13 +16,14 @@ void better(int arr[], int n){
         else
             c++;
     }
+    // cout << "a: " << a << "b: " << b << "c: " << c << endl;
     for(int i = 0; i < a; i++) {
         arr[i]=0;
     }
-    for(int j = 0; j < b; j++) {
+    for(int j = a; j < a+b; j++) {
         arr[j]=1;
     }
-    for(int k = 0; k < n; k++) {
+    for(int k = a+b; k < n; k++) {
         arr[k]=2;
     }
 }
@@ -34,9 +35,8 @@ int main(){
     for(int i =0;i<n;i++){
         cin >> arr[i];
     }
-    brute(arr,n);
+    better(arr,n);
     for(int i = 0; i < n; i++) {
         cout << arr[i] << " ";
     }
-    
 }
