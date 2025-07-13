@@ -20,13 +20,37 @@ bool brute_force(int arr[], int n, int k){
 bool better_approach(int arr[], int n, int k){
     map<int, int> mpp;
     for(int i=0;i<n;i++){
-        i++;
+        int a = arr[i];
+        int diff = k-a;
+        if(mpp.find(diff)!=mpp.end()){
+            return true;
+        }
+        mpp[a]=i;
+    }
+    return false;
+}
+
+bool optimal(int arr[], int n, int k){
+    int i=0, j=n-1;
+    sort(arr, arr+n);
+    while(i<j){
+        int sum = arr[i]+arr[j];
+        // cout << "s: " << sum << endl;
+        if(sum<k){
+            i++;
+        }
+        else if(sum>k){
+            j--;
+        }
+        else{
+            return true;
+        }
     }
     return false;
 }
 
 int main(){
-    int n;
+    int n;  
     cin >> n;
     int arr[n];
     for(int i =0;i<n;i++){
@@ -34,6 +58,6 @@ int main(){
     }
     int k;
     cin >> k;
-    bool result = brute_force(arr,n,k);
+    bool result = optimal(arr,n,k);
     cout << result;
 }
