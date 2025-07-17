@@ -28,6 +28,10 @@ void better(int arr[], int n){
     }
 }
 
+void optimal(int arr[], int n){
+    
+}
+
 int main(){
     int n;
     cin >> n;
