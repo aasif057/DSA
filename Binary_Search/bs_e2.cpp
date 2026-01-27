@@ -8,6 +8,21 @@ int lowerbound_Brute(int arr[], int n, int target){
     return n;
 }
 
+int lowerBound_Optimal(int arr[], int n, int target){
+    int low = 0, high = n-1, ans = n;
+    while(low<=high){
+        int mid = (low + high)/2;
+        if(arr[mid]>=target){
+            ans = mid;
+            high = mid-1;
+        }
+        else{
+            low = mid+1;
+        }
+    }
+    return ans;
+}
+
 int main(){
     int n;
     cin >> n;
@@ -17,6 +32,7 @@ int main(){
     }
     int target;
     cin >> target;
-    int x = lowerbound_Brute(arr,n,target);
+    // int x = lowerbound_Brute(arr,n,target);
+    int x = lowerBound_Optimal(arr,n,target);
     cout << x << endl;
 }
